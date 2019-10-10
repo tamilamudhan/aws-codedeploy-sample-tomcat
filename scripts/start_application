@@ -2,6 +2,8 @@
 
 set -e
 
+service tomcat7 start
+
 CATALINA_HOME='/usr/share/tomcat7-codedeploy'
 DEPLOY_TO_ROOT='true'
 #CONTEXT_PATH='##CONTEXT_PATH##'
