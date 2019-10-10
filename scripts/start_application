@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-service tomcat7 start
+
 
 CATALINA_HOME='/usr/share/tomcat7-codedeploy'
 DEPLOY_TO_ROOT='true'
@@ -29,6 +29,8 @@ fi
 cp $WAR_STAGED_LOCATION $CATALINA_HOME/webapps/$CONTEXT_PATH.war
 
 # Configure the Tomcat server HTTP connector
-{ which xsltproc; } || { yum -y install xsltproc; }
-cp $CATALINA_HOME/conf/server.xml $CATALINA_HOME/conf/server.xml.bak
-xsltproc $HTTP_PORT_CONFIG_XSL_LOCATION $CATALINA_HOME/conf/server.xml.bak > $CATALINA_HOME/conf/server.xml
+#{ which xsltproc; } || { yum -y install xsltproc; }
+#cp $CATALINA_HOME/conf/server.xml $CATALINA_HOME/conf/server.xml.bak
+#xsltproc $HTTP_PORT_CONFIG_XSL_LOCATION $CATALINA_HOME/conf/server.xml.bak > $CATALINA_HOME/conf/server.xml
+
+service tomcat7 start
